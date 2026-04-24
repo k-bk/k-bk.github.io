@@ -23,7 +23,7 @@ body {
 .overlay {
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.45);
 }
 
 .content {
@@ -60,80 +60,75 @@ body {
 </div>
 
 <script>
-// 🌿 LEPSZE ZDJĘCIA NATURY
-const keywords = ["nature","forest","mountains","ocean","landscape"];
+  
+const keywords = ["nature","forest","mountains","ocean","rocks","animal","rural","calm","sunset"];
 const k = keywords[Math.floor(Math.random()*keywords.length)];
 const img = `https://picsum.photos/seed/${k + Math.random()}/1080/1920`;
 document.body.style.backgroundImage = `url('${img}')`;
 
-// 📜 CYTATY (~70, sprawdzeni autorzy)
 const quotes = [
-{t:"Nie dlatego mamy mało czasu, lecz dlatego, że wiele go tracimy.",a:"— Seneka"},
-{t:"Życie jest wystarczająco długie, jeśli dobrze je wykorzystasz.",a:"— Seneka"},
-{t:"Trudności wzmacniają umysł, jak praca ciało.",a:"— Seneka"},
-{t:"Los sprzyja przygotowanym.",a:"— Seneka"},
-{t:"Nie uczymy się dla szkoły, lecz dla życia.",a:"— Seneka"},
-{t:"Największą przeszkodą życia jest oczekiwanie jutra.",a:"— Seneka"},
-{t:"Człowiek cierpi bardziej w wyobraźni niż w rzeczywistości.",a:"— Seneka"},
+{t:"Mądry człowiek, zapytany, jak nauczył się tak wiele o wszystkim, odpowie: “Ponieważ nigdy nie wstydziłem się ani nie bałem zadawać pytań na tematy, w których byłem ignorantem”.",a:"— John Abbott"},
+{t:"Wszystko, co nie podoba się nam u innych, może pomóc w lepszym poznaniu samych siebie.",a:"— Carl Gustav Jung"},
+{t:"Patrzeć bez zawiści, jak inni osiągają sukcesy, do których samemu się dąży, to wielkość.",a:"— Marie von Ebner-Eschenbach"},
+{t:"Tylko ci, którzy nauczyli się potęgi szczerego i bezinteresownego wkładu w życie innych, doświadczają największej radości życia – prawdziwego poczucia spełnienia.",a:"— Anthony Robbins"},
+{t:"Wkładaj swoje serce, umysł, mądrość i duszę nawet w swoje najmniejsze zadania. Oto sekret sukcesu.",a:"— Swami Sivananda"},
+{t:"W dwa miesiące możesz zdobyć więcej przyjaciół, interesując się innymi ludźmi, niż w ciągu dwóch lat, usiłując zainteresować sobą innych.",a:"— Dale Carnegie"},
+{t:"Czas to nie droga szybkiego ruchu pomiędzy kołyską a grobem; czas – to miejsce na zaparkowanie pod słońcem.",a:"— Phil Bosmans"},
+{t:"Naucz się śmiać ze swoich kłopotów, a nigdy nie skończą ci się powody do śmiechu.",a:"— Lyn Karol"},
+{t:"Chorobą, która zatruwa ludzkie życie, jest powaga.",a:"— Luke Rhinehart"},
+{t:"Zdarzenia rosną i potęgują się wraz z charakterem.",a:"— Ralph Waldo Emerson"},
 
-{t:"Masz władzę nad swoim umysłem — nie nad zdarzeniami.",a:"— Marek Aureliusz"},
-{t:"Jakość twojego życia zależy od jakości twoich myśli.",a:"— Marek Aureliusz"},
-{t:"Nie trać czasu na spory o to, jaki powinien być dobry człowiek. Bądź nim.",a:"— Marek Aureliusz"},
-{t:"To, co stoi na drodze, staje się drogą.",a:"— Marek Aureliusz"},
-{t:"Wszystko, co słyszysz, jest opinią, nie faktem.",a:"— Marek Aureliusz"},
+{t:"Posiadamy w sobie niewyobrażalną siłę, która może nas uczynić panami siebie.",a:"— Emile Coue"},
+{t:"Człowiek, który wysoko umieścił sobie poprzeczkę i jest zażenowany dlatego, że się starał najlepiej jak mógł, jest człowiekiem sukcesu, nawet jeśli świat przypisze mu porażkę.",a:"— Bertie Charles Forbes"},
+{t:"Nawet jeśli ktoś jest zamiataczem ulic, powinien zamiatać ulice tak, jak Michał Anioł malował albo Beethoven komponował muzykę, albo Shakespeare tworzył poezję.",a:"— Martin Luther King, Jr"},
+{t:"Jeśli będziesz się skupiać na tym, co już w życiu masz – będziesz mieć coraz więcej.",a:"— Oprah Winfrey"},
+{t:"Dopóki nie podważymy mitów i nie opracujemy naszego własnego systemu przekonań opartych na prawdzie, nigdy nie zdołamy spełnić swoich marzeń.",a:"— Diane Tracy"},
+{t:"Myśl jest realną siłą i naprawdę staje się potęgą.",a:"— Napoleon Hill"},
+{t:"Życie jest albo pełną wyzwań przygodą, albo niczym.",a:"— Helen Keller"},
+{t:"Każdą rewolucyjną ideę można podsumować trzema fazami – to niemożliwe, nie będę marnować czasu – to możliwe, ale nie warte zachodu – mówiłem przez cały czas, że to był dobry pomysł.",a:"— Arthur C. Clarke"},
+{t:"Człowiek z głową, raz zyskawszy punkt zaczepienia, dochodzi do wszystkiego, kiedy sam zechce!",a:"— Honoré de Balzac"},
+{t:"Bogaty jest taki człowiek, dla którego świat jest nieustannym odkrywaniem.",a:"— Georges Duhamel"},
 
-{t:"Najpierw powiedz sobie, kim chcesz być — potem rób to, co trzeba.",a:"— Epiktet"},
-{t:"Nie rzeczy nas martwią, lecz nasze opinie o nich.",a:"— Epiktet"},
-{t:"Bogactwem nie jest posiadanie wielu rzeczy, lecz potrzebowanie niewielu.",a:"— Epiktet"},
+{t:"Dla wielkich czynów niewiele pomaga zbytnia przezorność i zimna odwaga.",a:"— Jean de La Fontaine"},
+{t:"Żadne położenie nie jest aż tak straszne, by człowiek obdarzony równowagą ducha nie znalazł w nim jakiejś pociechy.",a:"— Seneka Młodszy"},
+{t:"Twój czas jest ograniczony, więc nie marnuj go na byciem kimś, kim nie jesteś.",a:"— Steve Jobs"},
+{t:"Ludzie stają się naprawdę niesamowici dopiero wtedy, gdy uwierzą, że mogą coś osiągnąć.",a:"— Norman Vincent Peale"},
+{t:"Im bardziej pomożesz innym ludziom, tym bardziej oni będą chcieli Ci pomóc.",a:"— Brian Tracy"},
+{t:"To, co widzimy, zależy głównie od tego, co chcemy zobaczyć.",a:"— John Lubbock"},
+{t:"Jak możesz spodziewać się więcej od wszechświata, jeżeli nie umiesz docenić tego, co już masz?",a:"— Kurt Vonnegut"},
+{t:"Jakże często szczęście bywa zaprzepaszczone przez zbyt długie przygotowania – głupie przygotowania!",a:"— Jane Austen"},
+{t:"Porażka nie czyni Cię przegranym.",a:"— Richard Exely"},
+{t:"Może się zdarzyć, że urodziłeś się bez skrzydeł, ale najważniejsze, żebyś nie przeszkadzał im wyrosnąć.",a:"— Coco Chanel"},
 
-{t:"Kto ma powód, by żyć, zniesie prawie każde jak.",a:"— Nietzsche"},
-{t:"Ten, kto walczy z potworami, powinien uważać, by sam nie stać się potworem.",a:"— Nietzsche"},
-{t:"Bez muzyki życie byłoby pomyłką.",a:"— Nietzsche"},
+{t:"Człowiek przede wszystkim musi mieć odwagę być sobą.",a:"— Milan Kundera"},
+{t:"Nie ma co się dręczyć.",a:"— Ewa Nowak"},
+{t:"Ciekawość jest najpotężniejszą siłą napędową w kosmosie.",a:"— Walter Moers"},
+{t:"Najrzadsza jest odwaga myślenia.",a:"— Anatole France"},
+{t:"Fałszywe ambicje każą zajść szybko, prawdziwe ambicje każą zajść wysoko.",a:"— Gilbert Cebron"},
 
-{t:"Serce ma swoje racje, których rozum nie zna.",a:"— Pascal"},
-{t:"Całe nieszczęście ludzi bierze się z jednego: nie potrafią spokojnie siedzieć w pokoju.",a:"— Pascal"},
+{t:"Wielcy ludzie wydzielają blask, który opromienia serca innych.",a:"— Yoshimoto Banana"},
+{t:"Grzecznością więcej wskórasz niż surowością.",a:"— Ezop"},
+{t:"Trudne życie to nie kara, tylko zadanie.",a:"— Mieczysław Maliński"},
+{t:"Bez wiary potykamy się o źdźbło słomy, z wiarą przenosimy góry.",a:"— Søren Kierkegaard"},
+{t:"Jak długo istnieje życie, tak długo istnieć będą nadzieje.",a:"— Teokryt"},
+{t:"Świat jest miejscem cudów, lecz samemu jest się największym cudem.",a:"— Jonathan Carroll"},
+{t:"Najdalej zajdzie ten człowiek, który wie, dokąd idzie.",a:"— Napoleon Bonaparte"},
+{t:"Nic się nie spełni, jeśli nie jest wpierw marzeniem.",a:"— Carl Sandburg"},
+{t:"Wszystkie wielkie osiągnięcia potrzebują czasu.",a:"— David J. Schwartz"},
+{t:"Sukces jest podróżą, nie celem.",a:"— Ben Sweetland"},
 
-{t:"Śmiałość ma w sobie geniusz, potęgę i magię.",a:"— Goethe"},
-{t:"Myślenie jest łatwe, działanie trudne.",a:"— Goethe"},
-{t:"To, co najważniejsze, rzadko jest pilne.",a:"— Goethe"},
-
-{t:"Nawyk jest drugą naturą człowieka.",a:"— Cyceron"},
-{t:"Największą stratą czasu jest odkładanie.",a:"— Cyceron"},
-
-{t:"Nie marnuj czasu, bo z niego składa się życie.",a:"— Benjamin Franklin"},
-{t:"Energia i wytrwałość pokonują wszystko.",a:"— Benjamin Franklin"},
-
-{t:"Działanie jest podstawowym kluczem do wszelkiego sukcesu.",a:"— Pablo Picasso"},
-
-// dodatkowe (bezpieczne klasyki)
-{t:"Prostota jest szczytem wyrafinowania.",a:"— Leonardo da Vinci"},
-{t:"Czas jest najcenniejszą rzeczą, jaką człowiek może wydać.",a:"— Teofrast"},
-{t:"Nie zaczynaj wielu rzeczy naraz.",a:"— Pitagoras"},
-{t:"Cisza jest źródłem wielkiej siły.",a:"— Laozi"},
-{t:"Droga tysiąca mil zaczyna się od jednego kroku.",a:"— Laozi"},
-{t:"Kto zna innych, jest mądry; kto zna siebie, jest oświecony.",a:"— Laozi"},
-{t:"Zwycięża ten, kto panuje nad sobą.",a:"— Laozi"},
-
-// trochę nowożytnych, ale dobrze udokumentowanych
-{t:"To, co robisz codziennie, ma większe znaczenie niż to, co robisz od czasu do czasu.",a:"— Gretchen Rubin"},
-{t:"Motywacja jest tym, co pozwala zacząć. Nawyk tym, co pozwala wytrwać.",a:"— Jim Ryun"},
-{t:"Skupienie oznacza powiedzenie „nie”.",a:"— Steve Jobs"},
-{t:"Proste może być trudniejsze niż złożone.",a:"— Steve Jobs"},
-
-// żeby dobić do ~70 — wariacje klasyków (bezpieczne znaczeniowo)
-{t:"To nie wydarzenia cię ranią, lecz twoje sądy o nich.",a:"— Epiktet"},
-{t:"Nie odkładaj życia na później.",a:"— Seneka"},
-{t:"Rób mniej, ale lepiej.",a:"— (parafraza klasycznej zasady minimalizmu)"},
-{t:"Czas ujawnia wszystko.",a:"— Sofokles"},
-{t:"Małe kroki każdego dnia tworzą wielkie rezultaty.",a:"— (zasada stoicka)"},
-{t:"Najlepszą zemstą jest brak podobieństwa.",a:"— Marek Aureliusz"},
-{t:"Nie trać czasu na rzeczy, na które nie masz wpływu.",a:"— Epiktet"},
-{t:"Dyscyplina to wolność.",a:"— (sentencja współczesna, szeroko używana)"},
-{t:"Myśl mniej, działaj więcej.",a:"— (maksyma klasyczna)"},
-{t:"Skupienie wymaga rezygnacji.",a:"— (zasada produktywności)"}
+{t:"Inspiracja istnieje, ale musi zastać cię przy pracy.",a:"— Pablo Picasso"},
+{t:"Przestań myśleć o porażce jako o jednej z opcji.",a:"— Joan Lunden"},
+{t:"Nie starzeje się ten, kto nie ma na to czasu.",a:"— Benjamin Franklin"},
+{t:"Mając pewność siebie, wygrałeś, zanim jeszcze wystartowałeś.",a:"— Marcus Garvey"},
+{t:"Jesteś jedyną osobą na świecie, która może wykorzystać twój potencjał.",a:"— Zig Ziglar"},
+{t:"Talent to tylko wielka cierpliwość.",a:"— Anatol France"},
+{t:"Zmień się, zanim będziesz musiał.",a:"— Jack Welch"},
+{t:"Nadzieja jest ryzykiem, które trzeba podjąć.",a:"— Georges Bernanos"},
+{t:"Nic tak nie przynosi powodzenia jak sukces.",a:"— Alexandre Dumas"},
+{t:"W ludziach więcej rzeczy zasługuje na podziw niż na pogardę.",a:"— Albert Camus"}
 ];
 
-// losowanie
 const q = quotes[Math.floor(Math.random()*quotes.length)];
 document.getElementById("quote").textContent = q.t;
 document.getElementById("author").textContent = q.a;
